@@ -31,6 +31,6 @@ while gameOn:
 	screen.blit(square2.surf, (150, 40))
 	screen.blit(square3.surf, (300, 40))
 	screen.blit(square4.surf, (450, 40))
-  screen.blit(square4.surf, (600, 40))
+  	screen.blit(square4.surf, (600, 40))
 
 	pygame.display.flip()
