@@ -1,5 +1,6 @@
-# WORK IN PROGRESS
+# WORDLE :)
 
+- Implemented with PyGame
 (still a work in progress)
 
-![alt text](https://i.pinimg.com/736x/33/d8/5a/33d85ae9e0e2b1ebd18e8a779482da69.jpg)
+![alt text](https://i.pinimg.com/736x/65/6e/70/656e70b777235c0ff9bc41181f3e0c46.jpg)
