@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a06a2b1b-28e9-4a3f-b5f8-4329fb4c7391)# WORDLE :)
+# WORDLE :)
 
 - Implemented with PyGame
 (still a work in progress)
