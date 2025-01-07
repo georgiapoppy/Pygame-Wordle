@@ -1,6 +1,6 @@
-# WORDLE :)
+![image](https://github.com/user-attachments/assets/a06a2b1b-28e9-4a3f-b5f8-4329fb4c7391)# WORDLE :)
 
 - Implemented with PyGame
 (still a work in progress)
 
-![alt text](https://i.pinimg.com/736x/65/6e/70/656e70b777235c0ff9bc41181f3e0c46.jpg)
+![alt text](https://i.pinimg.com/736x/f8/1e/6b/f81e6b8a291cb4c73b59a7a5d7ab0c94.jpg)
