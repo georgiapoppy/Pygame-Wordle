@@ -97,19 +97,16 @@ def update(screen, curr_row, guesses, answer, COLOURS1, COLOURS2, COLOURS3):
         KEYBOARD3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
         for letter in KEYBOARD1:
             if str(letter) in str(guesses[curr_row-1]):
-                COLOURS1.append(feedback[str(guesses[curr_row-1]).index(str(letter))])
-            else:
-                COLOURS1.append(GREY)
+                if COLOURS1[KEYBOARD1.index(letter)] == GREY:
+                    COLOURS1[KEYBOARD1.index(letter)] = feedback[str(guesses[curr_row-1]).index(str(letter))]
         for letter in KEYBOARD2:
             if str(letter) in str(guesses[curr_row-1]):
-                COLOURS2.append(feedback[str(guesses[curr_row-1]).index(str(letter))])
-            else:
-                COLOURS2.append(GREY)
+                if COLOURS2[KEYBOARD2.index(letter)] == GREY:
+                    COLOURS2[KEYBOARD2.index(letter)] = feedback[str(guesses[curr_row-1]).index(str(letter))]
         for letter in KEYBOARD3:
             if str(letter) in str(guesses[curr_row-1]):
-                COLOURS3.append(feedback[str(guesses[curr_row-1]).index(str(letter))])
-            else:
-                COLOURS3.append(GREY)
+                if COLOURS3[KEYBOARD3.index(letter)] == GREY:
+                    COLOURS3[KEYBOARD3.index(letter)] = feedback[str(guesses[curr_row-1]).index(str(letter))]
         for col, colour in enumerate(COLOURS1):
             x = 220 + (35 * col)
             y = 680
@@ -182,9 +179,9 @@ def main():
     curr_row = 0
     input = ""
     content = " "
-    COLOURS1 = []
-    COLOURS2 = []
-    COLOURS3 = []
+    COLOURS1 = [GREY for _ in range(10)]
+    COLOURS2 = [GREY for _ in range(9)]
+    COLOURS3 = [GREY for _ in range(7)]
     ANSWER = random.choice(WORDS).upper()
 
     gameOn = True
@@ -226,7 +223,7 @@ def main():
                             else:
                                 content = "Input is not a Valid Guess :("
                         else:
-                            win_or_lose(screen, f"You lost :( The answer was {ANSWER}")
+                            win_or_lose(screen, f"The answer was {ANSWER} :(")
                             content = " "
                             input = ""
                     else: 
