@@ -97,15 +97,15 @@ def update(screen, curr_row, guesses, answer, COLOURS1, COLOURS2, COLOURS3):
         KEYBOARD3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
         for letter in KEYBOARD1:
             if str(letter) in str(guesses[curr_row-1]):
-                if COLOURS1[KEYBOARD1.index(letter)] == GREY:
+                if (COLOURS1[KEYBOARD1.index(letter)] == GREY) or (COLOURS1[KEYBOARD1.index(letter)] == YELLOW):
                     COLOURS1[KEYBOARD1.index(letter)] = feedback[str(guesses[curr_row-1]).index(str(letter))]
         for letter in KEYBOARD2:
             if str(letter) in str(guesses[curr_row-1]):
-                if COLOURS2[KEYBOARD2.index(letter)] == GREY:
+                if (COLOURS2[KEYBOARD2.index(letter)] == GREY) or (COLOURS2[KEYBOARD2.index(letter)] == YELLOW):
                     COLOURS2[KEYBOARD2.index(letter)] = feedback[str(guesses[curr_row-1]).index(str(letter))]
         for letter in KEYBOARD3:
             if str(letter) in str(guesses[curr_row-1]):
-                if COLOURS3[KEYBOARD3.index(letter)] == GREY:
+                if (COLOURS3[KEYBOARD3.index(letter)] == GREY) or (COLOURS3[KEYBOARD3.index(letter)] == YELLOW):
                     COLOURS3[KEYBOARD3.index(letter)] = feedback[str(guesses[curr_row-1]).index(str(letter))]
         for col, colour in enumerate(COLOURS1):
             x = 220 + (35 * col)
@@ -139,7 +139,7 @@ def play_again_button(screen):
     button_rect = pygame.Rect(350, 380, 100, 40)
     pygame.draw.rect(screen, WHITE, button_rect)
     font2 = pygame.font.Font(None, 30)
-    text2 = font2.render('PLAY AGAIN :)', True, BLACK, GREEN)
+    text2 = font2.render('PLAY AGAIN', True, BLACK, GREEN)
     text_rect2 = text2.get_rect(center=button_rect.center)
     screen.blit(text2, text_rect2)
     return button_rect
@@ -210,19 +210,20 @@ def main():
                     input = input[:-1]
                 elif event.key == pygame.K_RETURN:
                     if len(input) == 5:
-                        if curr_row < 5:
+                        if curr_row < 6:
                             if any(element in input.lower() for element in GUESSES):
                                 guesses[curr_row] = input
                                 if input == ANSWER:
+                                    curr_row += 1
+                                    update(screen, curr_row, guesses, ANSWER, COLOURS1, COLOURS2, COLOURS3)
+                                    letters(screen, guesses)
                                     win_or_lose(screen, "You won! :)")
-                                    content = " "
-                                    input = ""
                                 curr_row += 1
                                 input = ""
                                 content = " "
                             else:
                                 content = "Input is not a Valid Guess :("
-                        else:
+                        if curr_row == 6:
                             win_or_lose(screen, f"The answer was {ANSWER} :(")
                             content = " "
                             input = ""
