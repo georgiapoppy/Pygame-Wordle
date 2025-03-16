@@ -19,12 +19,12 @@ INSTRUCTIONS:
    ```sh
    git clone https://github.com/georgiapoppy/Pygame-Wordle.git
    ```
-3. Create a virtual environment + Ensure Python is installed
-2. Install required packages:
+2. Create a virtual environment + Ensure Python is installed
+3. Install required packages:
    ```sh
    pip install -r /path/to/requirements.txt
    ```
-3. Ready to play! Click the run button in VS Code or type in the terminal:
+4. Ready to play! Click the run button in VS Code or type in the terminal:
    ```sh
    python main.py
    ```
